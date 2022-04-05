@@ -1,0 +1,50 @@
+body {font-family: Arial, Helvetica, sans-serif}
+* {box-sizing: border-box;}
+
+.home {
+  /* The image used */
+  /* background-image: url("img_nature.jpg"); */
+  background-image: url('home_flight.jpg');
+  margin: 0;
+  /* padding: 0; */
+  height: 100vh;
+  /* Needed to position the navbar */
+  /* position: relative;
+  */
+}
+
+/* Position the navbar container inside the image */
+.homecontainer {
+  position: absolute;
+  margin: 20px;
+  width: auto;
+}
+
+/* The navbar */
+.navigation-home {
+  overflow: hidden;
+  background-color: rgb(27, 6, 6);
+  opacity: 0.5;
+}
+
+/* Navbar links */
+.navigation-home a {
+  float: left;
+  color: #e4e6dfef;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navigation-home a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.title{
+ text-align: center;
+}
+.greet{
+  text-align: center;
+   
+}
