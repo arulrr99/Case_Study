@@ -1,0 +1,44 @@
+server:
+  port: 9000
+  
+eureka:
+  instance:
+    hostname: localhost  
+    
+    
+    
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+        - id: flight-book
+          uri: lb://flight-book
+          predicates:
+            - Path=/user/**,/**
+            
+            
+        - id: flight-search
+          uri: lb://flight-search
+          predicates:
+            - Path=/admin/**,/flightdetails/**,/flight/*
+            
+        - id: flight-user
+          uri: lb://flight-user
+          predicates:
+            - Path=/subs,/auth 
+            
+        - id: flight-payment
+          uri: lb://flight-payment
+          predicates:
+            - Path=/payment/**   
+    
