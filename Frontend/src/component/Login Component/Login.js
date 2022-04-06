@@ -34,7 +34,7 @@ export default class Login extends Component {
         alert("Login success!");
         window.location.href="/admindashboard";
       }
-       else{
+       if(res.data.role==="user"){
         alert("Login success!");
         window.location.href="/userdashboard";
       }
